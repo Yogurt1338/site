@@ -94,7 +94,7 @@ session_start();
   						<div class="barmenu">
   							<ul class="bar">
   								<li><a href="index.php" class="active">Домашняя</a></li>
-  								<li><a href="forum.php">Форум</a></li>
+  								<li><a href="forum.html">Форум</a></li>
   							</ul>
   						</div>
   					</div>
@@ -131,7 +131,7 @@ session_start();
                      <h2 class="sort">Сортировка по:    </h2>
                       <ul>
                         <li> <a href="processors1.php?sort=year-desc"> по новизне</a> </li>
-                        <li> <a href="processors1.php?sort=core-desc"> по количеству ядер(сначала наибольшее) </a> </li>
+                        <li> <a href="processors1.php?sort=vender-desc"> по производителю </a> </li>
                       </ul>
                  </div>
              </div>
@@ -150,9 +150,9 @@ session_start();
                 $sort_name = 'По новизне';
                 break;
 
-                case 'core-desc';
-                $sorting = 'core DESC';
-                $sort_name = 'По количеству ядер';
+                case 'vender-desc';
+                $sorting = 'vender DESC';
+                $sort_name = 'По производителя';
                 break;
 
                 default:
@@ -163,7 +163,7 @@ session_start();
               }
 
               $mysql1 = new mysqli('localhost','root','','register');
-         $result2 ="SELECT * FROM `processors` ORDER BY $sorting";
+         $result2 ="SELECT * FROM `videocards` ORDER BY $sorting";
 
            $result1 = mysqli_query($mysql1, $result2);
 
@@ -203,6 +203,7 @@ $id=$proc['Id'];
 								<li><a href="about.html">О форуме</a></li>
 								<li><a href="https://vk.com/yogurt96">Связь с админом</a></li>
 							</ul>
+  							</ul>
   						</div>
   					</div>
   					</div>

@@ -100,27 +100,18 @@ if (isset($_SESSION['userID'])):
 		<div class="container">
 			<div class="row">
 
-				<div class="qw6">
-					<div class="sidebar">
-						<h2 class="kat">Категория</h2>
-						<div class="category">
-                <ul>
-                  <li><a href="processors1.php" title="Процессоры">Процессоры</a></li>
-                  <li><a href="ozu.html" title="Оперативная память">Оперативная память</a></li>
-                  <li><a href="motherboards.html" title="Материнские платы">Материнские платы</a></li>
-                  <li><a href="graphic.html" title="Видеокарты">Видеокарты</a></li>
-                  <li><a href="cooling.html" title="Системы охлаждения">Системы охлаждения</a></li>
-                  <li><a href="storage.html" title="Накопители">Накопители</a></li>
-                  <li><a href="cases.html" title="Корпуса">Корпуса</a></li>
-                  <li><a href="power.html" title="Источники питания">Источники питания</a></li>
-                </ul>
-              </div>
-					</div>
-				</div>
 
         <div class="qw7">
           <div class="content">
-            Чувак, здесь точно что-то происходит
+
+<h2>Созать тему</h2>
+<form action="theme.php" method="post">
+  <input type="text" name="theme" id="theme" placeholder="Введите название темы"> <br>
+  <input type="text" name="descript" id="descript" placeholder="Введите описнаие темы"> <br>
+  <input type="submit" name="submit" value="Создать">
+</form>
+
+
             <?php
             if($_SESSION['userID'] == "Admin"):
             ?>
@@ -141,7 +132,7 @@ if (isset($_SESSION['userID'])):
 				<div class="row">
 					<div class="qw6">
 							<h2>Разработано на Иу4</h2>
-							<ul class="widget">
+              <ul class="widget">
 								<li><a href="about.html">О форуме</a></li>
 								<li><a href="https://vk.com/yogurt96">Связь с админом</a></li>
 							</ul>
@@ -203,6 +194,11 @@ else:
 						</div>
 					</div>
 
+					<div class="qw5">
+						<div class="search">
+							<input type="text" placeholder="Поиск"/>
+						</div>
+					</div>
 
 				</div>
 			</div>

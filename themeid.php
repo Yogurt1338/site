@@ -8,6 +8,7 @@ session_start();
     <meta charset="utf-8">
     <title>Xogurt</title>
 	<link href="style.css" rel="stylesheet">
+    <link href="logreg.css" rel="stylesheet">
   <script type="text/javascript">
   		function startTime(){
   			var tm=new Date();
@@ -107,64 +108,97 @@ session_start();
 	<div class="content">
 		<div class="container">
 			<div class="row">
-        <?php
-        if(isset($_SESSION['userID'])):
-        ?>
-        <div class="qw6">
-          <div class="sidebar">
-
-            <div class="category">
-                <ul>
-                  <li><a href="addtheme.php">Создать тему</a></li>
-                </ul>
-              </div>
-          </div>
-        </div>
-
-        <?php
-        endif;
-        ?>
 
         <div class="qw7">
           <div class="content">
-            <?php
 
-            $mysql1 = new mysqli('localhost','root','','register');
-       $result2 ="SELECT * FROM `themes` ORDER BY Date";
-         $result1 = mysqli_query($mysql1, $result2);
 
-         if($result1)
-          $proc = "";
-           while($proc = $result1->fetch_assoc()){
 
-?><div class='theme'>
-   <?php
-$uid=$proc['uid'];
-$theme=$proc['name'];
-$descript=$proc['theme'];
-$date=$proc['date'];
-$close=$proc['close'];
-$idtheme=$proc['Id'];
-?>
-<table width="1000px">
-</tr>
 <?php
-   Echo  "<a href=themeid.php?id=$idtheme> $theme </a>" ;?><br><?php
-   Echo  " $descript" ;
-?>
-<br><br>
-</tr>
-</table>
-</div>
 
- <?php
+$idtheme = $_GET["id"];
+
+            $mysql5 = new mysqli('localhost','root','','register');
+       $result6 ="SELECT * FROM `themes` WHERE id=$idtheme";
+         $result3 = mysqli_query($mysql5, $result6);
+
+         if($result3)
+          $row = "";
+           while($row = $result3->fetch_assoc())
+{
+             $theme=$row['name'];
+             $descript=$row['theme'];
+             $date=$row['date'];
+             $close=$row['close'];
+             $user=$row['uid'];
 }
-  //      mysqli_free_result($result1);
 
-        mysqli_close($mysql1);
+echo "<table width='1000px'>";
+
+if(($_SESSION['userID'] == "Admin") && ($close==0)){
+echo "<tr width='30%' ><td colspan='2'><h3> $theme </h3> </td> <td> <a href=closetheme.php?idtheme=$idtheme> Закрыть тему </a> </td></tr> ";
+}
+elseif ($close==1) {
+Echo "<tr width='30%' ><td colspan='2'><h3> $theme </h3><td><h5>Эта тема закрыта<h5></td> </td></tr> ";
+}
 
 
-         ?>
+echo "<tr width='30%' ><td> $user</td></tr>";
+if($close==1){
+echo "<tr width='70%' ><td rowspan='2'>$date</td></tr>";
+}
+else{
+echo "<tr width='70%'><td rowspan='2'>$date</td><td></td></tr>";
+}
+Echo "<tr width='30%'><td colspan='2'>$descript</td></tr>";
+
+$mysql3 = new mysqli('localhost','root','','register');
+$result4 ="SELECT * FROM `comments` WHERE idtheme = $idtheme";
+$result2 = mysqli_query($mysql3, $result4);
+
+if($result2)
+$proc = "";
+while($proc = $result2->fetch_assoc()){
+$datemsg=$proc['date'];
+$comment=$proc['comment'];
+$user=$proc['uid'];
+$comid=$proc['Id'];
+
+if($_SESSION['userID'] == "Admin"){
+Echo "<td> $user </td> <td colspan='2' rowspan='2'>$comment</td><td> <a href=moder.php?comid=$comid> удалить комметарий </a></td> </tr>";
+}
+else{
+Echo "<td> $user </td> <td colspan='2' rowspan='2'>$comment</td></tr>";
+}
+
+echo "<tr><td>$datemsg</td></tr>"; }
+
+
+echo "</table>";
+
+mysqli_close($mysql3);
+ mysqli_close($mysql5);
+
+ ?>
+
+
+
+<?php if ((isset($_SESSION['userID']))&& ($close==0)): ?>
+
+
+ <h2>Оставить комметарий</h2>
+ <form action="comment.php" method="post">
+   <input type="text" name="comment" > <br>
+   <input type="hidden" name="idtheme" value=" <?php echo $idtheme ?> ">
+   <input type="submit" name="submit" value="подтвердить">
+ </form>
+
+<?php elseif($close==0):  ?>
+<h4>чтобы оставить комметарий вводите или зарегистрируйтесь</h4>
+<a href="login.html">Вход</a><br>
+<a href="reg.html">Регистарция</a>
+
+<?php endif; ?>
 
           </div>
         </div>

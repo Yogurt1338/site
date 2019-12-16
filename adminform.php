@@ -51,16 +51,6 @@ if($_SESSION['userID'] == "Admin"):
 						</div>
 					</div>
 
-					<div class="qw3">
-						<div class="menu">
-							<ul class="bar">
-								<li><a href="wish.html"> Закладки</a></li>
-								<li><a href="reg.html"> Регистарция</a></li>
-								<li><a href="login.html"> Вход</a></li>
-							</ul>
-						</div>
-					</div>
-
         </div>
 			</div>
 		</div>
@@ -74,14 +64,8 @@ if($_SESSION['userID'] == "Admin"):
 						<div class="barmenu">
 							<ul class="bar">
 								<li><a href="index.php" class="active">Домашняя</a></li>
-								<li><a href="forum.html">Форум</a></li>
+								<li><a href="forum.php">Форум</a></li>
 							</ul>
-						</div>
-					</div>
-
-					<div class="qw5">
-						<div class="search">
-							<input type="text" placeholder="Поиск"/>
 						</div>
 					</div>
 
@@ -125,6 +109,23 @@ if($_SESSION['userID'] == "Admin"):
               <input type="submit" name="sub" value="Подтвердить">
             </form>
             </div>
+            <div class="form">
+              <h2>videocards Add</h2>
+            <form action="admin.php" method="post" enctype="multipart/form-data">
+              <input type="text" name="vender" placeholder="Введите производителя"> <br>
+              <input type="text" name="model" placeholder="Введите модель"> <br>
+              <input type="text" name="core" placeholder="Введите количество памяти"> <br>
+              <input type="text" name="year" placeholder="Введите год"> <br>
+              <input type="file" name="img" placeholder="Изображение"> <br>
+              <input type="submit" name="sub" value="Подтвердить">
+            </form>
+              <h2>Изменеие прав пользователей</h2>
+            <form action="usersrule.php" method="post" >
+              <input type="text" name="login" placeholder="Введите пользователя"> <br>
+              <input type="text" name="rule" placeholder="Права"> <br>
+              <input type="submit" name="sub" value="Подтвердить">
+            </form>
+            </div>
           </div>
         </div>
 
@@ -139,12 +140,6 @@ if($_SESSION['userID'] == "Admin"):
 				<div class="row">
 					<div class="qw6">
             <h2>Разработано на Иу4</h2>
-            <ul class="widget">
-              <li><a href="#">О форуме</a></li>
-              <li><a href="#">Связь с админом</a></li>
-              <li><a href="#">FAQ’s</a></li>
-            </ul>
-							</ul>
 						</div>
 					</div>
 					</div>

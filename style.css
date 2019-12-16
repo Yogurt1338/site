@@ -251,7 +251,7 @@ float: left;
   padding: 5px;
   width:400px;height:200px;
   margin: 10px;
-  font: 24px sans-serif; 
+  font: 24px sans-serif;
 
 }
 
@@ -267,20 +267,8 @@ img{width:200px;height:200px;}
 /*************************
 *******Tovar CSS******
 **************************/
-#insearch{
-  height: 30px;
-  width:175px;
-  margin-right:-5px;
-  border: 1px solid black;
-  font:14px sans-serif;
-}
-#buserach{
-height: 34px;
-  width:75px;
-  border: 1px solid black;
-  font:14px sans-serif;
-  cursor:pointer;
-}
+
+
 
 .cpu{
   margin: 10px;
@@ -338,3 +326,4 @@ height: 34px;
 	background:none;
 	color:#FE980F;
 }
+table{border: 1px solid black;}

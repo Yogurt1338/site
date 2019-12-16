@@ -64,7 +64,6 @@ session_start();
                 endif;
                 ?>
 
-                  <li><a href="wish.html"> Закладки</a></li>
 								<li><a href="exit.php"> Выход</a></li>
 							</ul>
 						</div>
@@ -177,10 +176,9 @@ $id = $_GET["id"];
 				<div class="row">
 					<div class="qw6">
 							<h2>Разработано на Иу4</h2>
-							<ul class="widget">
-								<li><a href="#">О форуме</a></li>
-								<li><a href="#">Связь с админом</a></li>
-								<li><a href="#">FAQ’s</a></li>
+              <ul class="widget">
+								<li><a href="about.html">О форуме</a></li>
+								<li><a href="https://vk.com/yogurt96">Связь с админом</a></li>
 							</ul>
 						</div>
 					</div>
