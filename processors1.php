@@ -111,7 +111,7 @@ session_start();
 
   				<div class="qw6">
   					<div class="sidebar">
-  						<h2 class="kat">Категория</h2>
+  						<h2 class="sort">Категория</h2>
   						<div class="category">
                   <ul>
                     <li><a href="processors1.php" title="Процессоры">Процессоры</a></li>

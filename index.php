@@ -102,7 +102,7 @@ if (isset($_SESSION['userID'])):
 
 				<div class="qw6">
 					<div class="sidebar">
-						<h2 class="kat">Категория</h2>
+						<h2 class="sort">Категория</h2>
 						<div class="category">
                 <ul>
                   <li><a href="processors1.php" title="Процессоры">Процессоры</a></li>
@@ -120,14 +120,32 @@ if (isset($_SESSION['userID'])):
 
         <div class="qw7">
           <div class="content">
-            Чувак, здесь точно что-то происходит
-            <?php
-            if($_SESSION['userID'] == "Admin"):
-            ?>
 
             <?php
-            endif;
-            ?>
+
+            $mysql5 = new mysqli('localhost','root','','register');
+       $result6 ="SELECT * FROM `news` ORDER BY id DESC ";
+         $result3 = mysqli_query($mysql5, $result6);
+
+         if($result3)
+          $row = "";
+           while($row = $result3->fetch_assoc())
+{
+             $top=$row['top'];
+             $date=$row['date'];
+             $sheet=$row['sheet'];
+
+
+echo "<table width='1000px'>";
+Echo "<tr><td> <h3> $top </h3> </td></tr>";
+
+echo "<tr><td> $sheet </td> </tr>"; ?> <br><?php
+echo "<tr> <td><br> $date </td></tr>";
+echo "</table>";
+}
+
+             ?>
+
           </div>
         </div>
 
@@ -215,7 +233,7 @@ else:
 
 				<div class="qw6">
 					<div class="sidebar">
-						<h2 class="kat">Категория</h2>
+						<h2 class="sort">Категория</h2>
 						<div class="category">
                 <ul>
                   <li><a href="processors1.php" title="Процессоры">Процессоры</a></li>
@@ -233,7 +251,30 @@ else:
 
         <div class="qw7">
           <div class="content">
-            Чувак, здесь ничего не происходит
+            <?php
+
+            $mysql5 = new mysqli('localhost','root','','register');
+       $result6 ="SELECT * FROM `news` ORDER BY id DESC ";
+         $result3 = mysqli_query($mysql5, $result6);
+
+         if($result3)
+          $row = "";
+           while($row = $result3->fetch_assoc())
+{
+             $top=$row['top'];
+             $date=$row['date'];
+             $sheet=$row['sheet'];
+
+
+echo "<table width='1000px'>";
+Echo "<tr><td> <h3> $top </h3> </td></tr>";
+
+echo "<tr><td> $sheet </td> </tr>"; ?> <br><?php
+echo "<tr> <td><br> $date </td></tr>";
+echo "</table>";
+}
+
+             ?>
           </div>
         </div>
 

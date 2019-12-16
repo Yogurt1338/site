@@ -87,12 +87,6 @@ session_start();
 						</div>
 					</div>
 
-					<div class="qw5">
-						<div class="search">
-							<input type="text" placeholder="Поиск"/>
-						</div>
-					</div>
-
 				</div>
 			</div>
 		</div>
@@ -104,7 +98,7 @@ session_start();
 
 				<div class="qw6">
 					<div class="sidebar">
-						<h2 class="kat">Категория</h2>
+						<h2 class="sort">Категория</h2>
             <div class="category">
                 <ul>
                   <li><a href="processors1.php" title="Процессоры">Процессоры</a></li>
@@ -154,6 +148,9 @@ $id = $_GET["id"];
               Echo "Модель: " , $mod;  ?></br>  <?php
               Echo "Год выхода процессора: ", $Year ;   ?></br>  <?php
               Echo "Количество ядер/потоков: ",  $core ;
+              if($_SESSION['userID'] == "Admin"){
+              echo "<a href=deletetovar.php?id=$id> Удалить товар </a>";
+              }
               }
                 ?>
            </div>

@@ -108,17 +108,9 @@ if (isset($_SESSION['userID'])):
 <form action="theme.php" method="post">
   <input type="text" name="theme" id="theme" placeholder="Введите название темы"> <br>
   <input type="text" name="descript" id="descript" placeholder="Введите описнаие темы"> <br>
-  <input type="submit" name="submit" value="Создать">
+   <input type="submit" class="btn"name="submit" value="подтвердить">
 </form>
 
-
-            <?php
-            if($_SESSION['userID'] == "Admin"):
-            ?>
-
-            <?php
-            endif;
-            ?>
           </div>
         </div>
 
@@ -194,12 +186,6 @@ else:
 						</div>
 					</div>
 
-					<div class="qw5">
-						<div class="search">
-							<input type="text" placeholder="Поиск"/>
-						</div>
-					</div>
-
 				</div>
 			</div>
 		</div>
@@ -211,7 +197,7 @@ else:
 
 				<div class="qw6">
 					<div class="sidebar">
-						<h2 class="kat">Категория</h2>
+						<h2 class="sort">Категория</h2>
 						<div class="category">
                 <ul>
                   <li><a href="processors1.php" title="Процессоры">Процессоры</a></li>

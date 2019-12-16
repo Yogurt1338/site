@@ -113,7 +113,7 @@ session_start();
         <div class="qw6">
           <div class="sidebar">
 
-            <div class="category">
+            <div class="Adt">
                 <ul>
                   <li><a href="addtheme.php">Создать тему</a></li>
                 </ul>

@@ -8,7 +8,6 @@ session_start();
     <meta charset="utf-8">
     <title>Xogurt</title>
 	<link href="style.css" rel="stylesheet">
-    <link href="logreg.css" rel="stylesheet">
   <script type="text/javascript">
   		function startTime(){
   			var tm=new Date();
@@ -190,7 +189,7 @@ mysqli_close($mysql3);
  <form action="comment.php" method="post">
    <input type="text" name="comment" > <br>
    <input type="hidden" name="idtheme" value=" <?php echo $idtheme ?> ">
-   <input type="submit" name="submit" value="подтвердить">
+   <input type="submit" class="btn"name="submit" value="подтвердить">
  </form>
 
 <?php elseif($close==0):  ?>

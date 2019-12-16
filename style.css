@@ -8,9 +8,15 @@ ul li {
   list-style: none;
 }
 
+
+
+a:link {text-decoration: none}
+a:visited {text-decoration: none}
+a:active {text-decoration: none}
 a:hover {
 outline: none;
 text-decoration:none;
+font-size: 24; font-weight: bold; color: navy;
 }
 
 a:focus {
@@ -174,20 +180,6 @@ padding: 0px 15px 5px 0px;
 }
 
 
-.search input {
-  background: #F0F0E9;
-  color: #B2B2B2;
-  font-family: 'roboto';
-  font-size: 12px;
-  font-weight: 300;
-  height: 35px;
-  outline: medium none;
-  padding-left: 10px;
-  width: 155px;
-  background-repeat: no-repeat;
-  background-position: 130px;
-}
-
 .sidebar{box-sizing: border-box;
 float: left;
 }
@@ -236,6 +228,8 @@ float: left;
   margin-left: 40px;
   }
 
+.Adt{font-size: 20px;
+margin: 10px;}
 
 .cpu{
   display: inline-block;
@@ -244,6 +238,7 @@ float: left;
   width:200px;height:200px;
   float: left;
   margin: 25px 10px;
+  border: 1px solid black;
 }
 
 .cpucard{
@@ -257,24 +252,6 @@ float: left;
 
 img{width:200px;height:200px;}
 #logo{width: auto; height: auto;}
-
-
-/*************************
-*******Log/Reg CSS******
-**************************/
-
-
-/*************************
-*******Tovar CSS******
-**************************/
-
-
-
-.cpu{
-  margin: 10px;
-  border: 1px solid black;
-}
-
 
 
 
@@ -296,6 +273,29 @@ img{width:200px;height:200px;}
 
 }
 
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+  background-color: rgb(230, 230, 230);
+}
+input:focus 		{ outline:none; }
+
+.btn {
+	display: inline-block;
+	background-color: rgb(200, 200, 200);
+	color: inherit;
+	font: inherit;
+	border: 0;
+  width: 315px;
+  height: 30px;
+	outline: 0;
+	padding: 0;
+	transition: all 200ms ease-in;
+	cursor: pointer;}
 
 .widget h2 {
   color: #666663;

@@ -80,10 +80,10 @@ if($_SESSION['userID'] == "Admin"):
 
 				<div class="qw6">
 					<div class="sidebar">
-						<h2 class="kat">Категория</h2>
+						<h2 class="sort">Категория</h2>
 						<div class="category">
                 <ul>
-                  <li><a href="processors.php" title="Процессоры">Процессоры</a></li>
+                  <li><a href="processors1.php" title="Процессоры">Процессоры</a></li>
                   <li><a href="category/ozu.html" title="Оперативная память">Оперативная память</a></li>
                   <li><a href="category/motherboards.html" title="Материнские платы">Материнские платы</a></li>
                   <li><a href="category/graphic.html" title="Видеокарты">Видеокарты</a></li>
@@ -106,7 +106,7 @@ if($_SESSION['userID'] == "Admin"):
               <input type="text" name="core" placeholder="Введите количество ядер"> <br>
               <input type="text" name="year" placeholder="Введите год"> <br>
               <input type="file" name="img" placeholder="Изображение"> <br>
-              <input type="submit" name="sub" value="Подтвердить">
+     <input type="submit" class="btn"name="submit" value="подтвердить">
             </form>
             </div>
             <div class="form">
@@ -117,14 +117,20 @@ if($_SESSION['userID'] == "Admin"):
               <input type="text" name="core" placeholder="Введите количество памяти"> <br>
               <input type="text" name="year" placeholder="Введите год"> <br>
               <input type="file" name="img" placeholder="Изображение"> <br>
-              <input type="submit" name="sub" value="Подтвердить">
+   <input type="submit" class="btn"name="submit" value="подтвердить">
             </form>
               <h2>Изменеие прав пользователей</h2>
             <form action="usersrule.php" method="post" >
               <input type="text" name="login" placeholder="Введите пользователя"> <br>
               <input type="text" name="rule" placeholder="Права"> <br>
-              <input type="submit" name="sub" value="Подтвердить">
+   <input type="submit" class="btn"name="submit" value="подтвердить">
             </form>
+            <h2>Добавление новостй</h2>
+          <form action="news.php" method="post" >
+            <input type="text" name="top" placeholder="Заголовок"> <br>
+            <input type="text" name="sheet" placeholder="Новость"> <br>
+   <input type="submit" class="btn"name="submit" value="подтвердить">
+          </form>
             </div>
           </div>
         </div>
